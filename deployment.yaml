@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gradle-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gradle-app
+  template:
+    metadata:
+      labels:
+        app: gradle-app
+    spec:
+      containers:
+        - name: gradle-app-container
+          image: deepakatl/oktasso:4.0  # Replace with your Docker image name
+          ports:
+            - containerPort: 3000
+          command: ["gradle", "clean", "bootRun"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gradle-app-service
+spec:
+  selector:
+    app: gradle-app
+  ports:
+    - protocol: TCP
+      port: 3000         # Service port
+      targetPort: 3000   # Container port
+      nodePort: 30080    # Node port (choose a port within 30000-32767)
+  type: NodePort
