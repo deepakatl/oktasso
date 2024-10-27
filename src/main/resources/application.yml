@@ -9,6 +9,6 @@ logging:
 
 okta:
   oauth2:
-    issuer: https://{yourDomain}/
-    client-id: {yourClientId}
-    client-secret: {yourClientSecret}
+    issuer: https://dev-wd22i0xkwuxsojve.us.auth0.com/
+    client-id: F9rceT4PocvQYD0jFOWPr2DftRabk0ZM
+    client-secret: rWXrZIAXWyQty34kgwlQfqi7pux4OInf_ouv9UVEvQrXFDaGLfD1jlJ5epiHlqef
