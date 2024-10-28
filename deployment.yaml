@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gradle-app-container
-          image: deepakatl/oktasso:4.0  # Replace with your Docker image name
+          image: deepakatl/oktasso:latest  # Replace with your Docker image name
           ports:
             - containerPort: 3000
           command: ["gradle", "clean", "bootRun"]
